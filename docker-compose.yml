@@ -6,7 +6,10 @@ services:
       container_name: phpmyadmin
       image: phpmyadmin/phpmyadmin
       restart: always
-      network_mode: host
+      # network_mode: host
+      ports:
+        # <Port exposed> : < MySQL Port running inside container>
+        - '8777:80'
       environment:
         - PMA_ARBITRARY=1
         - PMA_HOST=mysql
