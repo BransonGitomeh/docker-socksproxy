@@ -25,7 +25,7 @@ services:
         - MYSQL_USER=root
         - MYSQL_ROOT_PASSWORD=Gt3ds59Mdsm-d
     db:
-        image: mysql:5.7
+        image: mysql
         restart: always
         environment:
           MYSQL_DATABASE: 'db'
@@ -73,6 +73,6 @@ services:
       network_mode: host
       env_file:
         - database.env
-        
+
 volumes:
   my-db:
