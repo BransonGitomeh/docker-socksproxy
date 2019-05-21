@@ -3,7 +3,7 @@ version: "3"
 services:
 
     phpmyadmin:
-      container_name: phpmyadmin2
+      container_name: phpmyadmin
       image: phpmyadmin/phpmyadmin
       restart: always
       network_mode: host
@@ -13,18 +13,18 @@ services:
         - MYSQL_USERNAME=root
         - MYSQL_ROOT_PASSWORD=Gt3ds59Mdsm-d
 
+    # mysql:
+    #   container_name: mysql2
+    #   image: mysql
+    #   restart: always
+    #   user: "1000"
+    #   volumes:
+    #     - /srv/socks/mysql:/var/lib/mysql
+    #     - /srv/socks/etc/mysql:/etc/mysql/conf.d
+    #   environment:
+    #     - MYSQL_USER=root
+    #     - MYSQL_ROOT_PASSWORD=Gt3ds59Mdsm-d
     mysql:
-      container_name: mysql2
-      image: mysql
-      restart: always
-      user: "1000"
-      volumes:
-        - /srv/socks/mysql:/var/lib/mysql
-        - /srv/socks/etc/mysql:/etc/mysql/conf.d
-      environment:
-        - MYSQL_USER=root
-        - MYSQL_ROOT_PASSWORD=Gt3ds59Mdsm-d
-    db:
         image: mysql
         restart: always
         environment:
@@ -45,7 +45,7 @@ services:
         volumes:
           - my-db:/var/lib/mysql
     freeradius:
-      container_name: freeradius2
+      container_name: freeradius
       build: freeradius
       image: sfoxdev/freeradius
       restart: always
@@ -57,7 +57,7 @@ services:
 #        - /var/lib/mysql/mysql.sock:/var/run/mysqld/mysqld.sock
 
     dante:
-      container_name: dante2
+      container_name: dante
       build: dante
       image: sfoxdev/dante
       restart: always
@@ -66,7 +66,7 @@ services:
         - SECRET=Ptdn64Hsk3
 
     daloradius:
-      container_name: daloradius2
+      container_name: daloradius
       build: daloradius
       image: sfoxdev/daloradius
       restart: always
