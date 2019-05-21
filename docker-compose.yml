@@ -3,7 +3,7 @@ version: "2"
 services:
 
     phpmyadmin:
-      container_name: phpmyadmin
+      container_name: phpmyadmin2
       image: phpmyadmin/phpmyadmin
       restart: always
       ports:
@@ -17,7 +17,7 @@ services:
         - dante-net
 
     mysql:
-      container_name: mysql
+      container_name: mysql2
       image: mysql
       restart: always
       user: "1000"
@@ -31,7 +31,7 @@ services:
         - dante-net
 
     freeradius:
-      container_name: freeradius
+      container_name: freeradius2
       build: freeradius
       image: sfoxdev/freeradius
       restart: always
@@ -45,7 +45,7 @@ services:
         - dante-net
 
     dante:
-      container_name: dante
+      container_name: dante2
       build: dante
       image: sfoxdev/dante
       restart: always
@@ -57,7 +57,7 @@ services:
         - dante-net
 
     daloradius:
-      container_name: daloradius
+      container_name: daloradius2
       build: daloradius
       image: sfoxdev/daloradius
       restart: always
